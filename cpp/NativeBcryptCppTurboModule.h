@@ -1,4 +1,8 @@
+#if __has_include(<React-Codegen/RNBcryptCppSpecJSI.h>)
 #include <React-Codegen/RNBcryptCppSpecJSI.h>
+#elif __has_include("RNBcryptCppSpecJSI.h")
+#include "RNBcryptCppSpecJSI.h"
+#endif
 
 
 namespace facebook::react {

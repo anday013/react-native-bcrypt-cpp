@@ -2,14 +2,24 @@ cmake_minimum_required(VERSION 3.4.1)
 project(BcryptCpp)
 
 set (CMAKE_VERBOSE_MAKEFILE ON)
-set (CMAKE_CXX_STANDARD 14)
 
-add_library(react-native-bcrypt-cpp            SHARED
-            ../cpp/react-native-bcrypt-cpp.cpp
-            cpp-adapter.cpp
+add_compile_options(
+        -fexceptions
+        -frtti
+        -std=c++17
 )
 
-# Specifies a path to native header files.
-include_directories(
-            ../cpp
+add_library(react-native-bcrypt-cpp            STATIC
+            ../cpp/NativeBcryptCppTurboModule.cpp
+)
+
+target_include_directories(react-native-bcrypt-cpp
+        PUBLIC
+        ../cpp
+)
+
+target_link_libraries(react-native-bcrypt-cpp
+        jsi
+        react_nativemodule_core
+        react_codegen_RNBcryptCppSpec
 )
