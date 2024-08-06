@@ -1,5 +1,5 @@
-
 #include "NativeBcryptCppTurboModule.h"
+//#import <QuartzCore/QuartzCore.h>
 
 
 
@@ -15,11 +15,12 @@ jsi::Value NativeBcryptCppTurboModule::validatePassword(jsi::Runtime &rt, std::s
     return jsi::Value::undefined();
 }
 std::string NativeBcryptCppTurboModule::generateHashSync(jsi::Runtime &rt, std::string password, double workload){
-    
-    return "generateHashSync";
+
+    std::string generatedHash = bcrypt::generateHash(password, workload);
+    return generatedHash;
 }
 bool NativeBcryptCppTurboModule::validatePasswordSync(jsi::Runtime &rt, std::string password, std::string hash) {
-    return "validatePasswordSync";
+    return bcrypt::validatePassword(password, hash);
 }
 
 }
