@@ -12,11 +12,15 @@ npm install react-native-bcrypt-cpp
 
 
 ```js
-import { multiply } from 'react-native-bcrypt-cpp';
+import {
+  generateHash,
+  generateHashSync,
+  validatePassword,
+  validatePasswordSync,
+} from 'react-native-bcrypt-cpp';
 
 // ...
 
-const result = multiply(3, 7);
 ```
 
 
