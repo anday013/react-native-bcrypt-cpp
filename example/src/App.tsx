@@ -5,45 +5,61 @@ import {
   validatePassword,
   validatePasswordSync,
 } from 'react-native-bcrypt-cpp';
+import { MovingRectangle } from './MovingRectangle';
+
+const workload = 15;
+const password = 'asdcds-sdjakl12313841skdnanczdeioaj';
+const hash = '$2b$15$wX0mKtpwGwzdfbz099nUnu5R.NN/huUK9XBra0sS4xj4XfjfPOkzO';
+
+async function measureTime<T>(fn: () => T): Promise<T> {
+  const start = performance.now();
+  const res = await fn();
+  const end = performance.now();
+  const timeTaken = end - start;
+  console.log('Time taken :', timeTaken, 'ms');
+  return res;
+}
 
 export default function App() {
   return (
     <View style={styles.container}>
+      <MovingRectangle />
       <Button
         title="Generate Hash"
         onPress={async () => {
-          const password = 'password';
-          const workload = 10;
-          const hash = await generateHash(password, workload);
-          console.log(hash);
+          const generatedHash = await measureTime(() =>
+            generateHash(password, workload)
+          );
+          console.log('Generated hash:', generatedHash);
+        }}
+      />
+      <Button
+        title="Validate Password"
+        onPress={async () => {
+          const isValid = await measureTime(() =>
+            validatePassword(password, hash)
+          );
+          console.log('isValid', isValid);
         }}
       />
       <Button
         title="Generate Hash Sync"
-        onPress={() => console.log(generateHashSync('password', 10))}
-      />
-
-      <Button
-        title="Validate Password"
         onPress={async () => {
-          const password = 'password';
-          const hash =
-            '$2a$10$5e1Q8Bj1JWz5J9zQ7H5v3OjL2wz1I0Q9zZ6QzZ1Z1Z1Z1Z1Z1Z1Z1';
-          const isValid = await validatePassword(password, hash);
-          console.log(isValid);
+          const generatedHash = await measureTime(() =>
+            generateHashSync(password, workload)
+          );
+          console.log('Generated hash:', generatedHash);
         }}
       />
 
       <Button
         title="Validate Password Sync"
-        onPress={() =>
-          console.log(
-            validatePasswordSync(
-              'password',
-              '$2a$10$5e1Q8Bj1JWz5J9zQ7H5v3OjL2wz1I0Q9zZ6QzZ1Z1Z1Z1Z1Z1Z1'
-            )
-          )
-        }
+        onPress={async () => {
+          const isValid = await measureTime(() =>
+            validatePasswordSync(password, hash)
+          );
+          console.log('isValid', isValid);
+        }}
       />
     </View>
   );
