@@ -1,7 +1,7 @@
 {
   "name": "react-native-bcrypt-cpp",
   "version": "0.1.0",
-  "description": "Bcrypt implemented in pure C++ and linked to  React Native using Turbo Modules",
+  "description": "Next-gen React Native library for Bcrypt hashing, using pure C++ with Turbo Modules and multithreading for superior performance",
   "source": "./src/index.tsx",
   "main": "./lib/commonjs/index.js",
   "module": "./lib/module/index.js",
