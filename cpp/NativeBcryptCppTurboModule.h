@@ -9,7 +9,8 @@
 #elif __has_include("bcrypt.h")
 #include "bcrypt.h"
 #endif
-
+#include <jsi/jsi.h>
+#include <ReactCommon/CallInvoker.h>
 
 namespace facebook::react {
 class NativeBcryptCppTurboModule: public NativeBcryptCppCxxSpec<NativeBcryptCppTurboModule> {
