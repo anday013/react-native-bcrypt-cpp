@@ -4,6 +4,30 @@ Next-gen React Native library for Bcrypt hashing using pure C++ with Turbo Modul
 
 **_NOTE:_** This library can be used only with New Architecture (more information about New Architecture [here](https://github.com/reactwg/react-native-new-architecture))
 
+## Features
+
+- **50x faster than JS implementation** 🚀
+- **Multithreaded for high performance without blocking the JS thread** 🧵
+- **Seamless integration with Turbo Modules** 🔌
+- **Native C++ hashing for maximum security** 🔒
+- **Supports both asynchronous and synchronous operations** ⚡️
+- **Optimized for React Native's New Architecture** 📱
+
+## Performance
+
+The C++ implementation of Bcrypt hashing is significantly faster than the JavaScript implementation, especially for high-cost factors. Here are some benchmarks comparing the two implementations:
+
+![Comparisons](./assets/comparisons)
+
+## Demo
+
+After running "Generate Hash" function on JS side, it blocks JS Thread while the function runs (approximately 14 seconds). On the other hand, the C++ implementation runs the same function in a separate thread, allowing the JS thread to continue executing other tasks without blocking (approximately 0.3 seconds). This demonstrates the superior performance of the C++ implementation over the JavaScript implementation.
+
+|              JavaScript Demo              |                  C++ Demo                   |
+| :---------------------------------------: | :-----------------------------------------: |
+| ![JS Demo](./assets/JS_GENERATE_HASH.gif) | ![C++ Demo](./assets/C++_GENERATE_HASH.gif) |
+|          **JavaScript Hashing**           |               **C++ Hashing**               |
+
 ## Installation
 
 ```sh
@@ -15,6 +39,10 @@ or
 ```sh
 yarn add react-native-bcrypt-cpp
 ```
+
+### Linking
+
+TBD
 
 ## Usage
 
@@ -100,6 +128,11 @@ Synchronously validates the given password against the Bcrypt hash.
 **Returns:**
 
 - A `boolean` indicating whether the password is valid.
+
+## Bcrypt Algorithm Source
+
+This library implements the Bcrypt hashing algorithm in C++, adapted from the [Bcrypt.cpp project](https://github.com/hilch/Bcrypt.cpp?tab=License-1-ov-file) by Hilko Bengen.
+This product includes software developed by Niels Provos.
 
 ## Contributing
 
