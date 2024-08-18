@@ -42,7 +42,9 @@ yarn add react-native-bcrypt-cpp
 
 ### Linking
 
-TBD
+```sh
+cd ios && bundle install && RCT_NEW_ARCH_ENABLED=1 bundle exec pod install
+```
 
 ## Usage
 
