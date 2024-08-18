@@ -1,6 +1,6 @@
 {
   "name": "react-native-bcrypt-cpp",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Next-gen React Native library for Bcrypt hashing, using pure C++ with Turbo Modules and multithreading for superior performance",
   "source": "./src/index.tsx",
   "main": "./lib/commonjs/index.js",
