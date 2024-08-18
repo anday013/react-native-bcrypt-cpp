@@ -935,7 +935,7 @@ PODS:
   - React-Mapbuffer (0.74.5):
     - glog
     - React-debug
-  - react-native-bcrypt-cpp (0.1.0):
+  - react-native-bcrypt-cpp (0.2.1):
     - DoubleConversion
     - glog
     - hermes-engine
@@ -1400,7 +1400,7 @@ SPEC CHECKSUMS:
   React-jsitracing: 3b6060bbf5317663667e1dd93560c7943ab86ccc
   React-logger: 257858bd55f3a4e1bc0cf07ddc8fb9faba6f8c7c
   React-Mapbuffer: 6c1cacdbf40b531f549eba249e531a7d0bfd8e7f
-  react-native-bcrypt-cpp: 3a7a9427b6aa068c1fa462ee0465eb05d3cd198c
+  react-native-bcrypt-cpp: 8cdc0f0183b4b5c53b25a8144b8af70c034394b9
   react-native-randombytes: 421f1c7d48c0af8dbcd471b0324393ebf8fe7846
   React-nativeconfig: ba9a2e54e2f0882cf7882698825052793ed4c851
   React-NativeModulesApple: 8d11ff8955181540585c944cf48e9e7236952697

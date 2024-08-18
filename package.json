@@ -4,19 +4,8 @@
   "description": "Next-gen React Native library for Bcrypt hashing, using pure C++ with Turbo Modules and multithreading for superior performance",
   "source": "./src/index.tsx",
   "main": "./lib/commonjs/index.js",
+  "types": "./lib/typescript/commonjs/src/index.d.ts",
   "module": "./lib/module/index.js",
-  "exports": {
-    ".": {
-      "import": {
-        "types": "./lib/typescript/module/src/index.d.ts",
-        "default": "./lib/module/index.js"
-      },
-      "require": {
-        "types": "./lib/typescript/commonjs/src/index.d.ts",
-        "default": "./lib/commonjs/index.js"
-      }
-    }
-  },
   "files": [
     "src",
     "lib",
